@@ -16,6 +16,7 @@ El desarrollo consiste en las siguientes secciones
 * Contacto
 * Footer
 * Carrito
+  
 Todas estas respetando los requerimientos establecidos por la institución solicitante
 
 
