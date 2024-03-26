@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+:root {
+    --clr-main: #6f7357;
+    --clr-main-clear: #dae2ae;
+    --clr-main-clear-2: #f1ffa3;
+    --clr-gray: #ebe6ea;
+    --clr-gray-dark: #919191;
+    --clr-white: #fff;
+    --clr-brown-clear: #d6c4b1;
+    --clr-brown-dark: #796754;
+    --clr-brown-dark-intense: #4e4338;
+    --clr-red-brown: #884400;
+    --clr-green-dark: #273a2d;
+    --clr-main-grad: linear-gradient(var(--clr-main), var(--clr-green-dark));
+    --clr-brown-grad: linear-gradient(var(--clr-brown-dark), var(--clr-gray));
+    --clr-brown-clear-grad: linear-gradient(to right,var(--clr-brown-clear), var(--clr-gray))
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+}
+
+body {
+    background: var(--clr-gray);
+    background-size: cover;
+    padding: 2%;
+}
+
+.contenedor {
+    background-color: var(--clr-brown-clear);
+    max-width: 90%;
+    margin: auto;
+    padding: 3rem;
+    border-radius: 3rem;
+    border: .3rem solid #fff;
+}
+
+/* ---> ENCABEZADO <--- */
+
+.contenedor header {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenedor header .logo-titulo a {
+    text-decoration: none;
+    color: var(--clr-green-dark);
+    display: flex;
+    align-items: center;
+}
+
+.contenedor header .logo-titulo a i {
+    background-color: var(--clr-brown-clear);
+    font-size: 1.3rem;
+    margin-right: .6rem;
+}
+
+.contenedor header .logo-titulo h1 {
+    font-size: 1.4rem;
+}
+
+.contenedor header nav a {
+    text-decoration: none;
+    color: var(--clr-green-dark);
+    font-weight: bold;
+    padding: 0 .7rem;
+    transition: .5s;
+}
+
+.contenedor header nav a:hover {
+    color: var(--clr-brown-dark-intense);
+    letter-spacing: .05rem;
+}
+
+.contenedor header nav .selected {
+    color: var(--clr-red-brown);
+}
+
+.contenedor header .carrito {
+    font-weight: bold;
+    text-align: right;
+    width: 9rem;
+}
+
+.contenedor header.carrito a {
+    text-decoration: none;
+    /* color: yellow; */
+}
+
+.contenedor header .carrito .icono-carrito {
+    /* border: 1px solid red; */
+    display: inline-block;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 2.5rem;
+    position: relative;
+    transition: .3s ease-in-out;
+}
+
+.contenedor header .carrito .icono-carrito:hover {
+    background-color: var(--clr-gray);
+}
+
+.contenedor header .carrito .total-item-carrito {
+    position: absolute;
+    background-color: var(--clr-gray);
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+    line-height: 1rem;
+}
+
+/* ---> Sección INICIO <--- */
+
+.contenedor-seccion {
+    /* border: 2px solid red; */
+    position: relative;
+    margin-top: 10px;
+    /* overflow: hidden; */
+}
+
+/* ---> Acá iría el CSS del fondo de la sección INICIO */
+.contenedor-seccion .fondo-seccion {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: url(imgs/05\ -\ varias/fondo-clothes-03.png);
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    border-radius: 50px;
+    border: 3px solid #fff;
+}
+
+.contenedor-seccion .inicio {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 300px;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.contenedor-seccion .inicio .col {
+    width: 40%;
+    /* border: 2px solid yellowgreen; */
+}
+
+.contenedor-seccion .inicio .col .titulo-inicio {
+    /* border: 1px solid red; */
+    line-height: 40px;
+    font-size: 30px;
+    color: var(--clr-gray);
+    margin-bottom:15px;
+    margin-left: 10px;
+    text-align: left;
+}
+
+.contenedor-seccion .inicio .col .buscador {
+    /* border: 1px solid blueviolet; */
+    width: 80%;
+    margin: auto;
+    background: var(--clr-gray);
+    display: flex;
+    align-items: center;
+    border-radius: 2rem;
+    overflow: hidden;
+}
+
+.contenedor-seccion .inicio .col .buscador input {
+    width: 100%;
+    border: none;
+    display: inline-block;
+    padding: 10px;
+    outline: none;
+}
+
+.contenedor-seccion .inicio .col .buscador span {
+    width: 50px;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
+
+.contenedor-seccion .inicio .col .buscador span i {
+    padding-right: 10px;
+}
+
+.contenedor-seccion .inicio .col .buscador span:hover {
+    background-color: var(--clr-gray-dark);
+}
+
+.col-derecha {
+    /* border: 3px solid ; */
+    margin: 160px 0 0 0;
+}
+
+.contenedor-img {
+    /* border: 1px solid; */
+    /* height: 530px; */
+    /* height: 100%; */
+    width: 100%;
+    margin: auto;
+    /* margin-top: 30px; */
+    display: flex;
+    flex-direction: row;
+}
+
+/* ---> Sección ENCABEZADO <--- */
+.header-seccion {
+    position: relative;
+}
+
+/* ---> Sección INFO PRODUCTOS <--- */
+.productos {
+    /* border: 3px solid ; */
+    margin-top: 200px;
+    text-align: center;
+}
+
+.productos .fila {
+    display: flex;
+    justify-content: center;
+}
+
+.productos .fila .col{
+    /* border: 2px solid var(--clr-gray); */
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px 10px;
+    
+    width: fit-content;
+    border-radius: 30px;
+
+    overflow: hidden;
+    position: relative;
+}
+
+.productos .fila .col .contenido {
+    /* border: 3px solid var(--clr-gray); */
+    background-color: var(--clr-gray);
+    border-radius: 30px;
+    width: 50%;
+    margin: 10px;
+    padding: 10px 0;
+}
+
+.productos .fila .col .contenido img {
+    width: 100%;
+    height: 97%;
+}
+
+
