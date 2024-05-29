@@ -389,18 +389,6 @@ function actualizarBotonesAgregar() {
     })
 }
 
-// let productosEnCarrito;
-
-// let productosEnElCarritoLS = localStorage.getItem("productos-en-carrito");
-
-// if (productosEnElCarritoLS) {
-//     productosEnCarrito = JSON.parse(productosEnElCarritoLS);
-//     actualizarNumerito();
-// } else {
-//     productosEnCarrito = [];
-// }
-
-
 // ---> Nos traemos el LS  
 let productosEnCarrito;
 
@@ -418,13 +406,9 @@ if(productosEnElCarritoLS) {
 
 function agregarAlCarrito(e) { // ---> Función que agrega los items al array productosEnCarrito
 
-    // const id = e.currentTarget.id;
-    // console.log(id);
-
     const idBoton = e.currentTarget.id;
-    // console.log(idBoton);
+
     const productoAgregado = productos.find(producto => producto.id === idBoton); // ---> Creamos el elemento productoAgregado
-    //console.log(productoAgregado);
     
     // ---> Preguntamos si el producto ya está en el carrito
     if(productosEnCarrito.some(producto => producto.id === idBoton)) {
@@ -433,23 +417,15 @@ function agregarAlCarrito(e) { // ---> Función que agrega los items al array pr
     } else {
         productoAgregado.cantidad = 1; // ---> a productoAgregado le incorporamos la propiedad cantidad
         productosEnCarrito.push(productoAgregado); // ---> Agregamos el elemento al array de productos
-        // console.log(productosEnCarrito);
-        // localStorage.setItem("productosEnCarrito ", JSON.stringify(productosEnCarrito)); // ---> guardamos el array productosEnCarrito en el LS
     }
-
-    // console.log(productosEnCarrito);
-    // console.log(productosEnElCarrito);
     
     actualizarNumerito();
-    // console.log(productosEnCarrito); 
 
     localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito)); // ---> guardamos el array productosEnCarrito en el LS
-    // console.log(productosEnCarrito); 
 }
 
 function actualizarNumerito() { // ---> actualiza el número del carrito
     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-    // console.log(nuevoNumerito);
     numerito.innerHTML = nuevoNumerito;
     numeroCarrito.innerHTML = nuevoNumerito;
 }
