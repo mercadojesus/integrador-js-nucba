@@ -8,70 +8,117 @@
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
     crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="/assets/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>E-commerce Jesús Mercado</title>
 </head>
 <body>
-   <div class="contenedor">
+    <div class="contenedor">
 
         <!-- Sección ENCABEZADO -->
-        <header>
-            <div class="logo-titulo">
+        <header id="inicio" class="inicio">
+            <div class="logo">
                 <a href="index.html">
-                    <!-- <i class="fa-regular fa-circle-dot"></i> -->
-                    <h1>JMShop</h1>
+                    <img src="assets/imgs/05 - varias/logo.png" alt="">
                 </a>
             </div>
 
-            <nav id="nav">
+            <nav id="nav" class="nav">
                 <a href="index.html" class="selected">Inicio</a>
-                <a href="nosotros.html">Nosotros</a>
-                <a href="shop.html">Shop</a>
-                <a href="contacto.html">Contacto</a>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#shop">Shop</a>
+                <a href="#contacto">Contacto</a>
             </nav>
 
             <div class="carrito">
                 <span class="tu-compra">$ 55,000.00</span>
-                <a href="carrito.html">
+                <a href="#" class="modal-open"> <!-- Ícono Carrito Header -->
                     <span class="icono-carrito">
-                        <i class="fa-solid fa-bag-shopping"></i>
+                        <i class="fa-solid fa-bag-shopping icono"></i>
                         <!-- <i class="fa-solid fa-cart-shopping cart-icon"></i> -->
-                        <div class="total-item-carrito">
-                            2
+                        <div id="numerito" class="total-item-carrito">
+                            0
                         </div>
                     </span>
                 </a>
             </div>
 
-            <div class="overlay"></div> <!-- NUCBA -->
+            <!-- Acá iría el "overlay" de NUCBA -->
+            <!-- <div class="overlay"></div> NUCBA -->
         </header>
 
-        <!-- Sección INICIO -->
+        <!-- Sección INICIO - HERO -->
         <section class="contenedor-seccion">
             <div class="fondo-seccion"></div>
             <section id="inicio" class="inicio">
-                <div class="col">
+                <div class="col txt"> <!-- Textos del Header -->
+                    <span>Conocé nuestros servicios</span>
                     <h2 class="titulo-inicio">La ropa que buscas, <br> al mejor precio, <br> en un solo lugar </h2>
-                    <div class="buscador">
+                    <p>
+                        Trabajamos desde hace más de 10 años ofreciendote <br>
+                        los mejores productos al mejor precio <br> 
+                        y hoy estamos disponibles para vos 24 - 7 
+                    </p>
+                    <!-- <div class="buscador">
                         <input type="text" placeholder="Qué estás buscando?">
                         <span class="btn-buscar">
                             <i class="fa-solid fa-magnifying-glass"></i>
                         </span>
-                    </div>
+                    </div> -->
+                    <a href="#nosotros" class="btn-1">Más Información</a>
                 </div>
                     
                 <div class="col-derecha">
                     <div class="contenedor-img">
-                        <img src="/assets/imgs/05 - varias/01.png" alt="">
+                        <img src="/assets/imgs/05 - varias/01.0.png" alt="">
                     </div>
                 </div>
                 
             </section>
         </section>
 
+        <!-- Sección MARCAS / ESPACIADOR -->
+        <section class="marcas">
+            <div class="fila">
+                <div class="col reveal">
+                    <div class="marca">
+                        <img src="assets/imgs/06 - marcas/00.png" alt="">
+                    </div>
+                    <div class="marca">
+                        <img src="assets/imgs/06 - marcas/01.png" alt="">
+                    </div>
+                    <div class="marca">
+                        <img src="assets/imgs/06 - marcas/12.png" alt="">
+                    </div>
+                    <div class="marca">
+                        <img src="assets/imgs/06 - marcas/03.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="fila">
+                <div class="col reveal">
+                    <div class="marca">
+                        <img src="assets/imgs/06 - marcas/06.png" alt="">
+                    </div>
+                    <div class="marca animate">
+                        <img src="assets/imgs/06 - marcas/08.png" alt="">
+                    </div>
+                    <div class="marca animate">
+                        <img src="assets/imgs/06 - marcas/10.png" alt="">
+                    </div>
+                    <div class="marca animate">
+                        <img src="assets/imgs/06 - marcas/11.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
         <!-- Sección INFO PRODUCTOS -->
         <section id="productos" class="productos">
             <h3>Armá tu outfit a tu gusto</h3>
-            <p>Tenemos Todos los productos</p>
+            <p>Tenemos Todos los productos, para que puedas crear tu estilo</p>
             <div class="fila">
                 <div class="col">
                     <div class="contenido uno">
@@ -86,10 +133,203 @@
                         <img src="assets/imgs/05 - varias/01.4.png" alt="">
                     </div>
                 </div>
+            </div>
+        </section>
 
+        <!-- Sección NOSOTROS -->
+        <section id="nosotros" class="nosotros">
+            <h3>Amplio Stock</h3>
+            <p>
+                Somos la empresa lider en la comercialización de artículos de moda masculina.<br>
+                Contamos con ámplia variedad de articulos y accesorios, para que puedas optar
+                siempre entre las mejores marcas y productos.<br>
+                Nuestro sistema de talles te permite seleccionar adecuadamente la prenda que buscas.<br>
+                Contamos además con un sistema de gestión de combos que te permite incluir diversos productos
+                en un mismo pedido y obtener importantes descuentos<br>
+                Si no estas conforme con el talle o artículo podés cambiarlo dentro de los 10 días hábiles
+                una vez efectuada la entrega, o solicitar la devolución de tu dinero.<br>
+                Nuestro sistema de envío te permite contar con tus productos en la comodidad de tu casa.<br>
+                Más de 10 años en el rubro nos abalan<br>
+            </p>
+            <div class="fila">
+                <div class="col">
+                    <div class="contenido uno">
+                        <img src="assets/imgs/05 - varias/00.5.png" alt="">
+                    </div>
+
+                    <div class="contenido dos">
+                        <img src="assets/imgs/05 - varias/00.4.png" alt="">
+                    </div>
+
+                    <div class="contenido tres">
+                        <img src="assets/imgs/05 - varias/00.2.png" alt="">
+                    </div>
+
+                    <div class="contenido ">
+                        <img src="assets/imgs/05 - varias/00.3.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <div class="fila2">
+                <div class="col">
+                    <div class="contenido">
+                        <img src="assets/imgs/05 - varias/00.11.png" alt="">
+                    </div>
+
+                    <div class="contenido">
+                        <img src="assets/imgs/05 - varias/00.9.png" alt="">
+                    </div>
+
+                    <div class="contenido">
+                        <img src="assets/imgs/05 - varias/00.10.png" alt="">
+                    </div>
+
+                    <div class="contenido">
+                        <img src="assets/imgs/05 - varias/00.12.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección SHOP / PRODUCTOS -->
+        <section id="shop" class="shop">
+            <h2>Conocé Nuestros Productos</h2>
+
+            <!-- Categorías de Productos -->
+            <div class="categorias">
+                <button class="boton-categoria" id="todos">Todos</button>
+                <button class="boton-categoria" id="abrigos">Abrigos</button>
+                <button class="boton-categoria " id="remeras">Remeras</button>
+                <button class="boton-categoria" id="chombas">Chombas</button>
+                <button class="boton-categoria" id="pantalones">Pantalones</button>
+                <!-- <a href="carrito.html">Carrito <span class="numerito">0</span></a> -->
+                <!-- <a href="#" class="modal-open">Carrito <span class="numerito">0</span></a> -->
+            </div>
+
+            <!-- Productos NUCBA -->
+            <div id="contenedor-productos" class="contenedor-productos">
+                <!-- Rellenamos esto con JS -->
+            </div>
+            <!-- <button>Ver Más</button> -->
+        </section>
+
+        <section class="modal">
+
+            <div class="modal-container"> <!-- Contenedor del Modal -->
+
+                <div class="contenedor-carrito"> <!-- Contenido del Modal -->
+
+                    <!-- Encabezado del Modal -->
+                    <div class="encabezado-modal">
+                        <p id="carrito-vacio" class="carrito-vacio">Tu carrito está vacio. <i class="bi bi-emoji-frown"></i></p>
+                        <!-- <span class="carrito-vacio">Tu carrito está vacio.</span> -->
+                        <!-- <a class="btn-1 modal-close" href="#"> Cerrar </a> -->
+                    </div>
+
+                    <!-- Contenido o Cuerpo del Modal -->
+                    <div id="carrito-productos" class="carrito-productos disabled">
+                        <!-- Lo completamos con JS -->
+                    </div>
+                    
+                    <!-- Acciones o Funcionalidades del Carrito / Modal -->
+                    <div id="carrito-acciones" class="carrito-acciones disabled">
+                        <div class="carrito-acciones-izquerda">
+                            <button id="carrito-acciones-vaciar" class="carrito-acciones-vaciar">Vaciar Carrito</button>
+                        </div>
+
+                        <div class="carrito-acciones-derecha">
+                            <div class="carrito-acciones-total">
+                                <p>Total:</p>
+                                <p id="total">$3000</p>
+                            </div>
+                            <button id="carrito-acciones-comprar" class="carrito-acciones-comprar">Comprar Ahora</button>
+                        </div>
+                    </div>
+
+                    <p id="carrito-comprado" class="carrito-comprado disabled">Muchas gracias por tu compra. <i class="bi bi-emoji-laughing"></i></p>
+
+                    <!-- Botón CERRAR del Carrito / Modal -->
+                    <a class="btn-1 modal-close" href="#"> Cerrar </a>
+
+                </div>
             </div>
 
         </section>
-   </div> 
+
+        <!-- Sección CONTACTO / FORMULARIO -->
+        <section id="contacto" class="contacto">
+            <div class="fila">
+                <div class="col"> <!-- FORMULARIO -->
+                    <h2>Contactate con Nosotros</h2>
+                    <p>
+                        Hace tu pedido o consulta a través de este canal<br>
+                        y a la brevedad estaremos comunicandonos con vos
+                    </p>
+                    <form action="" id="formulario">
+                        <input id="nombre" type="text" placeholder="Nombre">
+                        <input id="apellido" type="text" placeholder="Apellido">
+                        <input id="telefono" type="phone" placeholder="Teléfono">
+                        <input id="email" type="email" placeholder="Email">
+                        <textarea name="" id="mensaje" cols="30" rows="10" placeholder="Mensaje"></textarea>
+                        <button class="btn-1">Enviar</button>
+                        <!-- <input class="btn-1" type="submit" value="Enviar"> -->
+                        <p class="advertencia" id="advertencia"></p>
+                    </form>
+                </div>
+                <div class="col derecha">
+                    <img src="assets/imgs/05 - varias/01.5.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección FOOTER -->
+        <footer class="footer">
+            <div class="fila">
+                <div class="col izquierda">
+                    <ul>
+                        <li><img src="assets/imgs/05 - varias/logo.png" alt=""></li>
+                        <li><p>Los mejores articulos al mejor precio</p></li>
+                    </ul>
+                </div>
+                <div class="col enlaces">
+                    <ul>
+                        <li><i class='bx  bx-right-arrow'></i><a href="#inicio" class="selected">Inicio</a></li>
+                        <li><i class='bx  bx-right-arrow'></i><a href="#nosotros">Nosotros</a></li>
+                        <li><i class='bx  bx-right-arrow'></i><a href="shop">Shop</a></li>
+                        <li><i class='bx  bx-right-arrow'></i><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col redes">
+                    <h4>Seguinos en nuestras redes</h4>
+                    <ul>
+                        <li><a href="#"><i class="bx bxl-facebook-circle"></i></a></li>
+                        <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                        <li><a href="#"><i class='bx bxl-instagram-alt'></i></a></li>
+                        <li><a href="#"><i class='bx bxl-linkedin-square' ></i></a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <div class="footer-text">
+                <p>
+                    &copy; 2024 Desarrollado por Jesús Mercado - Todos los derechos reservados
+                </p>
+            </div>
+        </footer>
+    </div>
+    <a href="#inicio"><img src="assets/imgs/05 - varias/flecha-arriba.png" class="upBtn"></a>
+    <a href="#" class="modal__open" id="modal__open">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <div id="numero-carrito" class="total_item_carrito">0</div>
+    </a> 
+
+    <script src="btn-up.js"></script>
+    <script src="animation.js"></script>
+    <script src="form.js"></script>
+    <script src="main.js"></script>
+    <script src="index.js"></script>
+    <script src="modal.js"></script>
+    <script src="carrito.js"></script>
 </body>
 </html>
