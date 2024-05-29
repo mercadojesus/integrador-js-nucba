@@ -10,9 +10,6 @@ function carritoModal () {
 
 
 let productosEnElCarrito = JSON.parse(localStorage.getItem("productosEnCarrito"));
-// productosEnElCarrito = JSON.parse(productosEnElCarrito);
-// let productosEnElCarrito = localStorage.getItem("productosEnCarrito");
-// productosEnElCarrito = JSON.parse(productosEnElCarrito);
 
 const contenedorCarritoVacio = document.querySelector("#carrito-vacio");
 const contenedorCarritoProductos = document.querySelector("#carrito-productos");
