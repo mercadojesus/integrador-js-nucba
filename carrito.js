@@ -18,6 +18,7 @@ const contenedorCarritoComprado = document.querySelector("#carrito-comprado");
 let botonesEliminar = document.querySelectorAll(".carrito-producto-eliminar");
 
 function cargarProductosCarrito() {
+    const productosEnElCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
     if(productosEnElCarrito && productosEnElCarrito.length > 0){
 
         contenedorCarritoVacio.classList.add("disabled");
@@ -65,7 +66,7 @@ function cargarProductosCarrito() {
         contenedorCarritoComprado.classList.add("disabled");
     
     }
-
+    actualizarNumerito();
     actualizarBotonesEliminar();
 } 
 
@@ -79,14 +80,35 @@ function actualizarBotonesEliminar() {
     })
 }
 
-function eliminarDelCarrito(e) { // ---> Nos quita los items del carrito
+// ---> Corrección de Gerardo:
+function eliminarDelCarrito(e) {
+    // ---> Nos quita los items del carrito
+
+    const productosEnElCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
+
     const idBoton = e.currentTarget.id;
-    const index = productosEnElCarrito.findIndex(producto => producto.id === idBoton);
+    const index = productosEnElCarrito.findIndex(
+      (producto) => producto.id === idBoton
+    );
 
     productosEnElCarrito.splice(index, 1);
+
+    localStorage.setItem(
+      "productosEnCarrito",
+      JSON.stringify(productosEnElCarrito)
+    );
     cargarProductosCarrito();
-
-    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito));
+  }
 }
+// ---> Esto es lo que yo tenía desarrollado
+// function eliminarDelCarrito(e) { // ---> Nos quita los items del carrito
+//     const idBoton = e.currentTarget.id;
+//     const index = productosEnElCarrito.findIndex(producto => producto.id === idBoton);
 
-}
+//     productosEnElCarrito.splice(index, 1);
+//     cargarProductosCarrito();
+
+//     localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito));
+// }
+
+

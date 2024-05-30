@@ -403,29 +403,69 @@ if(productosEnElCarritoLS) {
     productosEnCarrito = [];
 }
 
-
-function agregarAlCarrito(e) { // ---> Función que agrega los items al array productosEnCarrito
-
+// ---> Corrección de Gerardo:
+function agregarAlCarrito(e) {
+    // ---> Función que agrega los items al array productosEnCarrito
+    const productosEnCarrito =
+      JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
     const idBoton = e.currentTarget.id;
-
-    const productoAgregado = productos.find(producto => producto.id === idBoton); // ---> Creamos el elemento productoAgregado
-    
+  
+    const productoAgregado = productos.find(
+      (producto) => producto.id === idBoton
+    ); // ---> Creamos el elemento productoAgregado
+  
     // ---> Preguntamos si el producto ya está en el carrito
-    if(productosEnCarrito.some(producto => producto.id === idBoton)) {
-        const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
-        productosEnCarrito[index].cantidad++;
+    if (productosEnCarrito.some((producto) => producto.id === idBoton)) {
+      const index = productosEnCarrito.findIndex(
+        (producto) => producto.id === idBoton
+      );
+      productosEnCarrito[index].cantidad++;
     } else {
-        productoAgregado.cantidad = 1; // ---> a productoAgregado le incorporamos la propiedad cantidad
-        productosEnCarrito.push(productoAgregado); // ---> Agregamos el elemento al array de productos
+      productoAgregado.cantidad = 1; // ---> a productoAgregado le incorporamos la propiedad cantidad
+      productosEnCarrito.push(productoAgregado); // ---> Agregamos el elemento al array de productos
+      localStorage.setItem(
+        "productosEnCarrito",
+        JSON.stringify(productosEnCarrito)
+      ); // ---> guardamos el array productosEnCarrito en el LS
+      actualizarNumerito();
     }
-    
-    actualizarNumerito();
-
-    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito)); // ---> guardamos el array productosEnCarrito en el LS
-}
-
-function actualizarNumerito() { // ---> actualiza el número del carrito
-    let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+  }
+  
+  function actualizarNumerito() {
+    // ---> actualiza el número del carrito
+    const productosEnCarrito =
+      JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
+    let nuevoNumerito = productosEnCarrito.reduce(
+      (acc, producto) => acc + producto.cantidad,
+      0
+    );
     numerito.innerHTML = nuevoNumerito;
     numeroCarrito.innerHTML = nuevoNumerito;
-}
+  }
+
+// ---> Esto es lo que yo tenía desarrollado
+// function agregarAlCarrito(e) { // ---> Función que agrega los items al array productosEnCarrito
+
+//     const idBoton = e.currentTarget.id;
+
+//     const productoAgregado = productos.find(producto => producto.id === idBoton); // ---> Creamos el elemento productoAgregado
+    
+//     // ---> Preguntamos si el producto ya está en el carrito
+//     if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+//         const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
+//         productosEnCarrito[index].cantidad++;
+//     } else {
+//         productoAgregado.cantidad = 1; // ---> a productoAgregado le incorporamos la propiedad cantidad
+//         productosEnCarrito.push(productoAgregado); // ---> Agregamos el elemento al array de productos
+//     }
+    
+//     actualizarNumerito();
+
+//     localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnCarrito)); // ---> guardamos el array productosEnCarrito en el LS
+// }
+
+// function actualizarNumerito() { // ---> actualiza el número del carrito
+//     let nuevoNumerito = productosEnCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+//     numerito.innerHTML = nuevoNumerito;
+//     numeroCarrito.innerHTML = nuevoNumerito;
+// }
