@@ -106,7 +106,8 @@ function actualizarTotal() {
     total.innerText = `$${totalCalculado}`;
 }
 
-botonComprar.addEventListener("click", comprarCarrito); // ---> Función para vaciar el carrito
+// ---> Función para "comprar" el carrito
+botonComprar.addEventListener("click", comprarCarrito); 
 function comprarCarrito() {
 
     productosEnElCarrito.length = 0;
