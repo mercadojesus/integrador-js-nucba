@@ -72,7 +72,7 @@ function carritoModal () {
             contenedorCarritoComprado.classList.add("disabled");
         
         }
-        actualizarNumeritoModal();
+        // actualizarNumeritoModal();
         actualizarNumerito();
         actualizarBotonesEliminar();
         actualizarCantidadCarrito();
@@ -96,27 +96,24 @@ function carritoModal () {
         const productosEnElCarrito = JSON.parse(localStorage.getItem("productosEnCarrito")) || [];
 
         const idBoton = e.currentTarget.id;
-        const index = productosEnElCarrito.findIndex(
-        (producto) => producto.id === idBoton
-        );
+        const index = productosEnElCarrito.findIndex((producto) => producto.id === idBoton);
 
         productosEnElCarrito.splice(index, 1);
 
-        localStorage.setItem(
-        "productosEnCarrito",
-        JSON.stringify(productosEnElCarrito)
-        );
+        localStorage.setItem("productosEnCarrito",JSON.stringify(productosEnElCarrito));
         cargarProductosCarrito();
     }
 
     // ---> Función para vaciar el carrito
     botonVaciar.addEventListener("click", vaciarCarrito);
+
     function vaciarCarrito() {
 
         productosEnElCarrito.length = 0;
         localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito));
         cargarProductosCarrito();
 
+        // actualizarNumerito();
     }
 
     // ---> Función para actualizar el total del carrito
@@ -125,7 +122,7 @@ function carritoModal () {
         total.innerText = `$${totalCalculado}`;
     }
 
-    // ---> Función para "comprar" el carrito
+    // ---> Función para "comprar" el carrito (vacía el carrito)
     botonComprar.addEventListener("click", comprarCarrito); 
     function comprarCarrito() {
 
@@ -136,6 +133,8 @@ function carritoModal () {
         contenedorCarritoProductos.classList.add("disabled");
         contenedorCarritoAcciones.classList.add("disabled");
         contenedorCarritoComprado.classList.remove("disabled");
+
+        actualizarNumerito();
     }
 
     // Botones de agregar o quitar productos de los cards del carrito
@@ -165,6 +164,7 @@ function carritoModal () {
         cargarProductosCarrito() // ---> Llamamos a la función que renderiza los cards de los productos
         localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito)) // ---> Actualizamos el Local Storage
 
+        // actualizarTotal();
     }
 
     // ---> Función para quitar cantidad de elementos en el carrito
@@ -199,13 +199,15 @@ function carritoModal () {
 
         cargarProductosCarrito() // ---> Llamamos a la función que renderiza los cards de los productos
         localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito)) // ---> Actualizamos el Local Storage
+
+        // actualizarTotal();
     }
 
-    function actualizarNumeritoModal() {
-        let nuevoNumerito = productosEnElCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
-        numerito.innerHTML = nuevoNumerito;
-        numeroCarrito.innerHTML = nuevoNumerito;
-    }
+    // function actualizarNumeritoModal() {
+    //     let nuevoNumerito = productosEnElCarrito.reduce((acc, producto) => acc + producto.cantidad, 0);
+    //     numerito.innerHTML = nuevoNumerito;
+    //     numeroCarrito.innerHTML = nuevoNumerito;
+    // }
 
 }
 // ---> Esto es lo que yo tenía desarrollado

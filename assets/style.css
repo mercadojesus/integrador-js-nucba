@@ -186,7 +186,7 @@ header .nav {
     -moz-box-shadow: 0px 10px 5px -4px rgba(0,0,0,0.57);
 }
 
-.contenedor-seccion .inicio {
+.contenedor-seccion .inicio-hero {
     /* border: 2px solid blueviolet; */
     position: relative;
     display: flex;
@@ -197,36 +197,31 @@ header .nav {
     margin: 20px 0 20px 0;
 }
 
-.contenedor-seccion .inicio .col {
+.contenedor-seccion .inicio-hero .col {
     /* border: 2px solid yellowgreen; */
     /* margin-top: 100px; */
     width: 40%;
     height: 100%;
 }
 
-.contenedor-seccion .inicio .txt {
-    /* border: 2px solid yellowgreen; */
+.contenedor-seccion .inicio-hero .txt {
     text-align: left;
     color: var(--clr-gray);
-    /* flex-basis: 40%; */
     padding-right: 0;
 }
 
-.contenedor-seccion .inicio .txt span {
+.contenedor-seccion .inicio-hero .txt span {
     font-size: 16px;
     font-weight: 600;
 }
 
-.contenedor-seccion .inicio .txt .titulo-inicio {
-    
-    /* border: 1px solid red; */
+.contenedor-seccion .inicio-hero .txt .titulo-inicio {
     line-height: 70px;
     font-size: 50px;
     margin: 15px 0;
 }
 
-.contenedor-seccion .inicio .txt p {
-    /* border: 1px solid chartreuse; */
+.contenedor-seccion .inicio-hero .txt p {
     font-size: 18px;
     line-height: 40px;
     margin: 30px 0;
@@ -847,4 +842,76 @@ hr {
 /* Esta clase es para todo lo que va oculto */
 .disabled {
     display: none;
+}
+
+/* -----------------> MEDIA QUERIES / Sección RESPONSIVE <----------------- */
+@media screen and (max-width: 1400px) {
+    .inicio-hero {
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .inicio-hero {
+        display: flex;
+    }
+
+    .col-derecha {
+        display: none;
+    }
+
+    .contenedor-seccion .inicio-hero .txt {
+        text-align: center;
+        width: 100%;
+    }
+
+    /* Formulario Contacto */
+    .contacto .fila .derecha {
+        display: none;
+    }
+
+    .contacto .fila .col {
+        padding: 0;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 950px) {
+    body {
+        padding: 20px;
+    }
+
+    .contenedor {
+        padding: 20px;
+    }
+
+    nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .contenedor {
+    }
+
+    .contenedor-seccion {
+
+    }
+
+    /* Corresponde al Hero */
+    .col-derecha {
+        display: none; /* ---> retira la imagen del Hero */
+    }
+
+    .txt span {
+        /* border: 1px solid yellow; */
+    }
+
+    .inicio {
+        border: 1px solid yellowgreen;
+    }
+
+    .contenedor-productos {
+        grid-template-columns: 1fr 1fr;
+    }
 }

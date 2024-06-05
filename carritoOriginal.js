@@ -89,14 +89,14 @@ function eliminarDelCarrito(e) {
     productosEnElCarrito.splice(index, 1);
     cargarProductosCarrito();
 
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnElCarrito));
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito));
 }
 
 botonVaciar.addEventListener("click", vaciarCarrito); // ---> Función para vaciar el carrito
 function vaciarCarrito() {
 
     productosEnElCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnElCarrito)); // ---> Vaciamos los productos que hay en el LS
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito)); // ---> Vaciamos los productos que hay en el LS
     cargarProductosCarrito();
 }
 
@@ -111,7 +111,7 @@ botonComprar.addEventListener("click", comprarCarrito);
 function comprarCarrito() {
 
     productosEnElCarrito.length = 0;
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnElCarrito)); // ---> Vaciamos los productos que hay en el LS
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito)); // ---> Vaciamos los productos que hay en el LS
     
     contenedorCarritoVacio.classList.add("disabled");
     contenedorCarritoProductos.classList.add("disabled");
@@ -144,7 +144,7 @@ function aumentarEnElCarrito(e) {
     // console.log(productoAumentado.cantidad) // ---> nos devuelve el elemento cantidad del objeto modificado
     carritoCantidad = productoAumentado
     cargarProductosCarrito() // ---> Llamamos a la función que renderiza los cards de los productos
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnElCarrito)) // ---> Actualizamos el Local Storage
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito)) // ---> Actualizamos el Local Storage
 
 }
 
@@ -175,11 +175,11 @@ function reducirEnElCarrito(e) {
         productosEnElCarrito.splice(index, 1)
         cargarProductosCarrito()
 
-        localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnElCarrito))
+        localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito))
     }
 
     cargarProductosCarrito() // ---> Llamamos a la función que renderiza los cards de los productos
-    localStorage.setItem("productos-en-carrito", JSON.stringify(productosEnElCarrito)) // ---> Actualizamos el Local Storage
+    localStorage.setItem("productosEnCarrito", JSON.stringify(productosEnElCarrito)) // ---> Actualizamos el Local Storage
 }
 
 function actualizarNumeritoModal() {
