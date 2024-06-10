@@ -17,7 +17,14 @@
 
         <!-- Sección HEADER MOBILE -->
         <header class="header-mobile">
-
+            <div class="logo">
+                <a href="index.html">
+                    <img src="assets/imgs/05 - varias/logo.png" alt="">
+                </a>
+            </div>
+            <button class="open-menu" id="open-menu">
+                <i class="bi bi-list"></i>
+            </button>
         </header>
 
         <!-- Sección ENCABEZADO -->
@@ -28,12 +35,23 @@
                 </a>
             </div>
 
-            <nav id="nav" class="nav">
-                <a href="index.html" class="selected">Inicio</a>
-                <a href="#nosotros">Nosotros</a>
-                <a href="#shop">Shop</a>
-                <a href="#contacto">Contacto</a>
+            <nav id="nav"> <!-- Acá iría el class="nav menu-responsive" -->
+                <a id="enlace" href="index.html" class="selected">Inicio</a>
+                <a id="enlace" href="#nosotros">Nosotros</a>
+                <a id="enlace" href="#shop">Shop</a>
+                <a id="enlace" href="#contacto">Contacto</a>
+
+                <!-- Ícono CERRAR menu responsive -->
+                <span id="close-responsive">
+                    <i class="bi bi-x-lg"></i>
+                </span>
+
             </nav>
+
+            <!-- Ícono ABRIR menu responsive -->
+            <div id="nav-responsive">
+                <i class="bi bi-list"></i>
+            </div>
 
             <div class="carrito">
                 <span class="tu-compra">$ 55,000.00</span>
@@ -310,6 +328,9 @@
                     <ul>
                         <li><a href="#"><i class="bx bxl-facebook-circle"></i></a></li>
                         <li><a href="#"><i class="bx bxl-twitter"></i></a></li>
+                    </ul>
+                        
+                    <ul>
                         <li><a href="#"><i class='bx bxl-instagram-alt'></i></a></li>
                         <li><a href="#"><i class='bx bxl-linkedin-square' ></i></a></li>
                     </ul>
@@ -338,5 +359,6 @@
     <script src="index.js"></script>
     <script src="modal.js"></script>
     <script src="carrito.js"></script>
+    <script src="menu.js"></script>
 </body>
 </html>

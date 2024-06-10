@@ -844,6 +844,19 @@ hr {
     display: none;
 }
 
+.contenedor .header-mobile {
+    display: none;
+}
+
+#nav-responsive {
+    font-size: 30px;
+    display: none;
+}
+
+#close-responsive {
+    display: none;
+}
+
 /* -----------------> MEDIA QUERIES / Sección RESPONSIVE <----------------- */
 @media screen and (max-width: 1400px) {
     .inicio-hero {
@@ -874,6 +887,26 @@ hr {
         padding: 0;
         width: 100%;
     }
+
+    .footer .fila .izquierda img {
+        display: none;
+    }
+
+    .footer .fila .izquierda ul {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .footer .fila .redes ul{
+        /* border: 1px solid blueviolet; */
+        /* display: block; */
+        display: inline-block;
+    }
+
+    .footer .fila .redes ul i {
+        /* border: 1px solid red; */
+    }
 }
 
 @media screen and (max-width: 950px) {
@@ -888,14 +921,74 @@ hr {
     nav {
         display: none;
     }
+
+    #nav-responsive {
+        display: block;
+        margin-left: 70px;
+    }
+
+    .menu-responsive { /* ---> Estilos del nav RESPONSIVE */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: -webkit-fill-available;
+        background-color: var(--clr-brown-clear);
+        z-index: 100;
+        transform: translateX(0);
+        transition: .3s ease all;
+        /* transform: translateX(-100%); */
+        /* transform: translateX(0);
+        transition: 3s; */
+    }
+
+    .menu-visible {
+        transform: translateX(0);
+    }
+
+    .menu-responsive a { /* ---> Estilos de los Enlaces */
+        color: var(--clr-brown-dark) !important;
+        display: block;
+        text-align: center;
+        font-size: 45px;
+        margin: 10px 0;
+    }
+
+    #close-responsive {
+        display: block;
+        line-height: 40px;
+        color: var(--clr-brown-dark);
+        font-size: 30px;
+        text-align: center;
+    }
+
+    #close-responsive i {
+        padding: 5px;
+        width: 40px;
+        height: 40px;
+        border: 3px solid var(--clr-brown-dark);
+        border-radius: 10%;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 732px) {
+    .footer .fila .redes ul {
+        display: flex;
+    }
 }
 
 @media screen and (max-width: 600px) {
-    .contenedor {
+    #nav-responsive {
+        margin-left: 70px;
     }
 
-    .contenedor-seccion {
-
+    /* Carrito del header */
+    .carrito .tu-compra{
+        display: none;
     }
 
     /* Corresponde al Hero */
@@ -908,10 +1001,24 @@ hr {
     }
 
     .inicio {
-        border: 1px solid yellowgreen;
+        /* border: 1px solid yellowgreen; */
     }
 
     .contenedor-productos {
         grid-template-columns: 1fr 1fr;
+    }
+
+    .footer .fila .col {
+        /* border: 1px solid orchid; */
+        padding: 0;
+        width: 100%;
+    }
+    
+    .footer .fila .izquierda, .footer .fila .enlaces {
+        display: none;
+    }
+
+    .footer .fila .redes ul i {
+        margin: 0 5px;
     }
 }
