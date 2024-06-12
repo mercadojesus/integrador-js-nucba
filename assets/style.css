@@ -79,7 +79,7 @@ header div, nav {
     width: 100px;
 }
 
-header .nav {
+header nav {
     float: left;
 }
 
@@ -91,7 +91,7 @@ header .nav {
     position: relative;
 }
 
-.contenedor header nav a:after {
+.contenedor header nav a:after { /* ---> Subrallado de los enlaces del nav */
     content: "";
     position: absolute;
     right: 0;
@@ -100,6 +100,7 @@ header .nav {
     height: 2px;
     width: 100%;
     background-color: var(--clr-green-dark);
+    /* background-color: red; */
 
     /* Animación derecha a izquierda */
     transform-origin: right;
@@ -848,13 +849,18 @@ hr {
     display: none;
 }
 
-#nav-responsive {
+#open-responsive {
     font-size: 30px;
     display: none;
 }
 
 #close-responsive {
     display: none;
+}
+
+nav { /* ---> Estilos del contenedor del nav*/ 
+    /* display: none;  */
+    /* transform: translateX(-100%); */
 }
 
 /* -----------------> MEDIA QUERIES / Sección RESPONSIVE <----------------- */
@@ -918,43 +924,51 @@ hr {
         padding: 20px;
     }
 
-    nav {
+    .contenedor header nav a:after {
         display: none;
     }
 
-    #nav-responsive {
+    #open-responsive {
         display: block;
         margin-left: 70px;
     }
 
-    .menu-responsive { /* ---> Estilos del nav RESPONSIVE */
+    nav {
+        display: none;
+    }
+
+    nav.menu-responsive { /* ---> Estilos del nav RESPONSIVE */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: var(--clr-brown-clear);
         display: flex;
         flex-direction: column;
         justify-content: center;
-        position: absolute;
-        top: 0;
-        left: 0;
+        
         width: 100%;
-        height: -webkit-fill-available;
-        background-color: var(--clr-brown-clear);
+        height: 100vh;
+        
         z-index: 100;
         transform: translateX(0);
-        transition: .3s ease all;
-        /* transform: translateX(-100%); */
-        /* transform: translateX(0);
-        transition: 3s; */
+        transition: .3s;
+        
+        overflow-y: hidden;
+
     }
 
-    .menu-visible {
-        transform: translateX(0);
-    }
 
-    .menu-responsive a { /* ---> Estilos de los Enlaces */
+    nav.menu-responsive a { /* ---> Estilos de los Enlaces */
         color: var(--clr-brown-dark) !important;
         display: block;
         text-align: center;
         font-size: 45px;
         margin: 10px 0;
+        transition: .3s ease;
+    }
+
+    nav.menu-responsive a:hover {
+        letter-spacing: 2px;
     }
 
     #close-responsive {
@@ -973,6 +987,56 @@ hr {
         border-radius: 10%;
         line-height: 60px;
     }
+
+    .carrito-producto {
+        border: 1px solid blueviolet;
+    }
+
+    .carrito-producto-titulo {
+        font-size: 15px;
+    }
+
+    .carrito-producto-precio {
+        font-size: 15px;
+    }
+
+    .carrito-producto-cantidad {
+        display: none;
+    }
+
+    .carrito-producto-subtotal {
+        display: none;
+    }
+
+    .carrito-acciones-vaciar {
+        font-size: 15px;
+        margin-right: 10px;
+    }
+
+    .carrito-producto-eliminar {
+        margin-right: 0;
+    }
+
+}
+
+@media screen and (max-width: 790px) {
+    .carrito-acciones {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        /* display: grid;
+        place-items: center; */
+        gap: 10px;
+    }
+
+    .carrito-acciones-derecha {
+        margin-right: 0;
+    }
+
+    .carrito-acciones-comprar {
+        margin-right: 0;
+    }
 }
 
 @media screen and (max-width: 732px) {
@@ -982,7 +1046,7 @@ hr {
 }
 
 @media screen and (max-width: 600px) {
-    #nav-responsive {
+    #open-responsive {
         margin-left: 70px;
     }
 
@@ -1007,6 +1071,8 @@ hr {
     .contenedor-productos {
         grid-template-columns: 1fr 1fr;
     }
+
+    
 
     .footer .fila .col {
         /* border: 1px solid orchid; */
