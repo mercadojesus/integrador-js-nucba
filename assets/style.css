@@ -988,10 +988,6 @@ nav { /* ---> Estilos del contenedor del nav*/
         line-height: 60px;
     }
 
-    .carrito-producto {
-        border: 1px solid blueviolet;
-    }
-
     .carrito-producto-titulo {
         font-size: 15px;
     }
@@ -1151,5 +1147,30 @@ nav { /* ---> Estilos del contenedor del nav*/
 
     .contacto .fila .col input, .contacto .fila .col textarea {
         width: 90%;
+    }
+
+    .modal-container {
+        width: 98%;
+        padding: 8px 5px;
+    }
+
+    .carrito-producto {
+        padding: 10px;
+    }
+
+    .carrito-producto-imagen {
+        width: 60px;
+    }
+
+    #modal__open {
+        font-size: 17px;
+    }
+
+    .total_item_carrito {
+        font-size: 15px;
+    }
+
+    .upBtn {
+        width: 20px;
     }
 }
