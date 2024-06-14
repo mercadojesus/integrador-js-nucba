@@ -1077,7 +1077,7 @@ nav { /* ---> Estilos del contenedor del nav*/
     }
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 450px) {
     body {
         padding: 5px 0;
     }
