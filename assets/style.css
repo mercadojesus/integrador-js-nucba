@@ -1041,6 +1041,17 @@ nav { /* ---> Estilos del contenedor del nav*/
     }
 }
 
+@media screen and (max-width: 650px) {
+
+    .modal-container {
+        width: 90%;
+    }
+
+    .carrito-producto-imagen {
+        width: 60px;
+    }
+}
+
 @media screen and (max-width: 600px) {
     #open-responsive {
         margin-left: 70px;

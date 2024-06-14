@@ -6,6 +6,7 @@ const modalContainer = document.querySelector('.modal-container');
 const closeModal = document.querySelector('.modal-close');
 const contacto2 = document.querySelector("#contacto")
 const footer2 = document.querySelector(".footer")
+const upBtn = document.querySelector('.upBtn');
 
 
 openModal.addEventListener('click', (e) => {
@@ -24,6 +25,8 @@ openModalLateral.addEventListener('click', (e) => {
     document.body.style.overflowY = "hidden";
     contacto2.style.display = "none";
     footer2.style.display = "none";
+    openModalLateral.classList.add("disabled");
+    upBtn.classList.add("disabled");
 })
 
 closeModal.addEventListener('click', (e) => {
@@ -32,6 +35,9 @@ closeModal.addEventListener('click', (e) => {
     document.body.style.overflowY = "scroll";
     contacto2.style.display = "none";
     footer2.style.display = "none";
+    openModalLateral.classList.remove("disabled");
+    upBtn.classList.remove("disabled");
+
 })
 
 // Cerrar modal al clickear fuera del mismo
@@ -41,6 +47,8 @@ window.addEventListener('click', function (e) {
         document.body.style.overflowY = "scroll";
         contacto2.style.display = "block";
         footer2.style.display = "block";
+        openModalLateral.classList.remove("disabled");
+        upBtn.classList.remove("disabled");
     }
 });
 
