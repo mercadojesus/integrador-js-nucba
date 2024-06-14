@@ -1096,6 +1096,12 @@ nav { /* ---> Estilos del contenedor del nav*/
         margin-left: 90px;
     }
 
+    nav.menu-responsive {
+        position: fixed;
+        top: 0;
+        left: -13px;
+    }
+
     .contenedor-seccion .inicio-hero {
         margin: 0;
     }
